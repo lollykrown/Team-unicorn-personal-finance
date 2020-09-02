@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Expenses - Personal Finance Tracker</title>
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha256-L/W5Wfqfa0sdBNIKN9cG6QA5F2qx4qICmU2VgLruv9Y=" crossorigin="anonymous" />
+    <!--fontAwesome-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-mattBlackLight fixed-top" >
+      <button class="navbar-toggler sideMenuToggler" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <a class="navbar-brand px-4" href="/home">Personal Finance Tracker</a>
+      <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
+      </button> -->
+    </nav>
+    <div class="wrapper d-flex">
+      <div class="sideMenu bg-mattBlackLight">
+        <div class="sidebar">
+          <ul class="navbar-nav text-center">
+            <li class="nav-item">
+              <a href="/home" class="nav-link px-2">
+                <i class="fas fa-tachometer-alt icon"></i>
+                <span class="text">OverView</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/income" class="nav-link px-2">
+                <i class="fas fa-money-bill icon"></i>
+                </i><span class="text">Income</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/expenses" class="nav-link px-2">
+                <i class="fas fa-money-check icon"></i><span class="text">Expenses</span></a>
+            </li>
+            <li class="nav-item">
+              <a href="/budget" class="nav-link px-2">
+                <i class="fas fa-chart-area icon"></i><span class="text">Budget</span></a>
+            </li>
+            <!-- <li class="nav-item">
+              <a href="#" class="nav-link px-2">
+                <i class="fas fa-user icon"></i><span class="text">Account</span></a>
+            </li> -->
+            <li class="nav-item">
+              <a href="/settings" class="nav-link px-2">
+                <i class="fas fa-cogs icon"></i><span class="text">Settings</span></a>
+            </li>
+            <li class="nav-item">
+              <a href="logout" class="nav-link px-2">
+                <i class="fas fa-sign-out-alt icon"></i><span class="text">Log Out</span></a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+      <div class="content">
+        <main>
+          <div class="container px-4">
+            <div class="row justify-content-center">
+                            
+                <div class="col-lg-7">
+                    <div class="card shadow-lg border-0 rounded-lg mt-5">
+                        <div class="card-header"><h3 class="text-center font-weight-light my-4">Add Expenses</h3></div>
+                        <div class="card-body">
+                            <form action="/expenses" method=POST>
+                                <div class="form-group">
+                                  <label for="exampleFormControlInput1">Date</label>
+                                  <input type="date" name="expensePeriod" class="form-control" id="exampleFormControlInput1" >
+                                </div>
+                                <div class="form-group">
+                                  <label for="exampleFormControlSelect1">Select Category</label>
+                                  <select class="form-control" name="categoryName" id="categoryList">
+                                    <!-- <option>Choose..</option> -->
+                                    <%for(let i=0; i<cat.length; i++) {%>
+                                      <option value="<%=cat[i].categoryName%>"><%=cat[i].categoryName%></a></option>
+                                      <%}%>
+                                  </select>
+                                </div>
+                                <div class="form-group">
+                                  <label for="exampleFormControlSelect1">Select Payment Method</label>
+                                  <select name="expenseType" class="custom-select" id="inputGroupSelect04">
+                                    <option selected>Choose Payment Method</option>
+                                    <option value="card">Credit/Debit Card</option>
+                                    <option value="cash">Cash</option>
+                                  </select>
+                                </div>
+                                <div class="form-group">
+                                  <label for="exampleFormControlSelect2">Amount</label>
+                                  <input type="number" name="amount" class="form-control" id="amount">
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block default-btn">Add Expenses</button>
+                              </form>
+                        </div>
+                    </div>
+                </div>
+            </div>     
+            
+          </div><!--Container Fluid-->
+        </main>
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"
+      integrity="sha256-OUFW7hFO0/r5aEGTQOz9F/aXQOt+TwqI1Z4fbVvww04="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"
+      integrity="sha256-qE/6vdSYzQu9lgosKxhFplETvWvqAAlmAuR+yPh/0SI="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

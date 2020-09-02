@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Settings - Personal Finance Tracker</title>
+
+  <!--Bootstrap-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha256-L/W5Wfqfa0sdBNIKN9cG6QA5F2qx4qICmU2VgLruv9Y=" crossorigin="anonymous" />
+  <!--fontAwesome-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-mattBlackLight fixed-top">
+    <button class="navbar-toggler sideMenuToggler" type="button">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <a class="navbar-brand px-4" href="#">Personal Finance Tracker</a>
+    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
+      </button> -->
+  </nav>
+  <div class="wrapper d-flex">
+    <div class="sideMenu bg-mattBlackLight">
+      <div class="sidebar">
+        <ul class="navbar-nav text-center">
+          <li class="nav-item">
+            <a href="/home" class="nav-link px-2">
+              <i class="fas fa-tachometer-alt icon"></i>
+              <span class="text">OverView</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/income" class="nav-link px-2">
+              <i class="fas fa-money-bill icon"></i>
+              </i><span class="text">Income</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/expenses" class="nav-link px-2">
+              <i class="fas fa-money-check icon"></i><span class="text">Expenses</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="/budget" class="nav-link px-2">
+              <i class="fas fa-chart-area icon"></i><span class="text">Budget</span></a>
+          </li>
+          <!-- <li class="nav-item">
+              <a href="#" class="nav-link px-2">
+                <i class="fas fa-user icon"></i><span class="text">Account</span></a>
+            </li> -->
+          <li class="nav-item">
+            <a href="/settings" class="nav-link px-2">
+              <i class="fas fa-cogs icon"></i><span class="text">Settings</span></a>
+          </li>
+          <li class="nav-item">
+              <a href="/logout" class="nav-link px-2">
+                <i class="fas fa-sign-out-alt icon"></i><span class="text">Log Out</span></a>
+            </li>
+
+        </ul>
+      </div>
+    </div>
+    <div class="content">
+      <main>
+        <div class="container px-4">
+          <div class="row">
+            <div class="col-12 mt-4 ">
+              <h1>Account Settings</h1>
+              <p>Set up your account for easy use and accessibility</p>
+            </div>
+          </div>
+          <hr>
+          <div class="card shadow">
+            <div class="card-body">
+
+              <!-- <div class="row">
+                <div class="col-12">
+                  <h1>Set Income Category</h1>
+                  <p>Set up your income category. That is, where your income source comes from. choose below the list of
+                    items on the modal box</p>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#incomeCategory">
+                    Add an Income Category
+                  </button> -->
+
+                  <!-- Modal -->
+                  <!-- <div class="modal fade" id="incomeCategory" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLongTitle">Add Income Category</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <form method="POST" action="/">
+                          <div class="modal-body">
+                            <input class="form-control" type="text" placeholder="Add Income Category">
+                            <div class="alert alert-primary" role="alert">
+                              An Income Category is a Source of your income e.g Allowance, Salary etc. You Can also add
+                              More than One income Source.
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Add Income</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr> -->
+
+              <div class="row">
+                <div class="col-12">
+                  <h1>Add Expenses Category</h1>
+                  <p>Set up your Expenses category. That is, what you spend on. choose below the list of items on the
+                    modal box</p>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#expensesCategory">
+                    Add an Expenses Category
+                  </button>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="expensesCategory" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLongTitle">Add Expenses Category</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <form action="/category" method="POST">
+                          <div class="modal-body">
+                            <input class="form-control" required name="categoryName" type="text"
+                              placeholder="e.g groceries">
+                            <div class="alert alert-primary" role="alert">
+                              An Expenses Category is a list of things you spend your finance and income on, Salary etc.
+                              You Can also add More than One Expenses Source.
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Add Expenses Category</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr>
+
+              <div class="row">
+                <div class="col-12">
+                  <h1>Choose Currency Type</h1>
+                  <p>Choose from our available currency type the currency you want to use while in the App</p>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#currencyCategory">
+                    Choose Currency
+                  </button>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="currencyCategory" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLongTitle">Choose Currency Type</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <form action="/settings" method="POST">
+                          <div class="modal-body">
+                            <div class="input-group mb-3">
+                              <select name="currency" class="custom-select" id="selectCurrency">
+                                <option selected>Choose Currency...</option>
+                                <option>&#8358;</option>
+                                <option>&#36;</option>
+                                <option>&#8357;</option>
+                                <option>&#8364;</option>
+                                <option>&#90;&#36;</option>
+                                <option>&#65020;</option>
+                                <option>&#8363;</option>
+                                <option>&#66;&#115;</option>
+                                <option>&#1083;&#1074;</option>
+                                <option>&#36;&#85;</option>
+                                <option>&#36;</option>
+                                <option>&#36;</option>
+                              </select>
+                            </div>
+                            <div class="alert alert-primary" role="alert">
+                              Choose your desired Currency type....
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Set Currencty Type</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr>
+            </div>
+          </div>
+          <!--Frequently Asked Questions-->
+          <div class="row mt-3 mb-5">
+            <div class="col-12 mt-4 ">
+              <div class="card shadow">
+                <div class="card-body">
+                  <h1 data-toggle="tooltip" data-placement="top" title="Frequently Asked Questions">FAQs</h1>
+                  <p>Have Questions on how to use our application and how to use all features in this website/p>
+                    <hr>
+                  <div id="accordion">
+                    <div class="card">
+                      <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                          <a href="#" class=" btn-link text-secondary" data-toggle="collapse" data-target="#collapseOne"
+                            aria-expanded="true" aria-controls="collapseOne">
+                            <h3>About The Personal Finance Tracker</h3>
+                          </a>
+                        </h5>
+                      </div>
+
+                      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body">
+                          The Personal Finance Tracker is a Web Application that Helps Users Manage their Income,
+                          Expenses and Also make Budgets on a daily, monthly and yearly basis. Users can Register on the
+                          Sign Up page and also Login using the Account details created. A User is redirected to His/Her
+                          dashboard page where he can set budget and all others.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header" id="headingTwo">
+                        <h5 class="mb-0">
+                          <a href="#" class=" btn-link collapsed text-secondary" data-toggle="collapse"
+                            data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <h3>How To Use The Web Application</h3>
+                          </a>
+                        </h5>
+                      </div>
+                      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                        <div class="card-body">
+                          First time users should please navigate to "Get Started" and Sign up as a new user. If you are
+                          a registered user then Login into your account . <strong>Note:</strong> As a new user, you
+                          will be redirected to the Account settings page after you login. Where you will have to set up
+                          details for using the app.
+                          You will have to set up the following;
+                          <ul>
+                            <li>Income Category</li>
+                            <li>Expenses Category</li>
+                            <li>Set Your Currency</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header" id="headingThree">
+                        <h5 class="mb-0">
+                          <a href="#" class="btn-link collapsed text-secondary" data-toggle="collapse"
+                            data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <h3>Why do you need this App</h3>
+                          </a>
+                        </h5>
+                      </div>
+                      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                        <div class="card-body">
+                          The Personal Finance Tracker, helps you keep track of your day to day financial activities so
+                          you know how you spend and also keep track of how you live financially while helping you stay
+                          within your budget.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!--Container Fluid-->
+      </main>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"
+    integrity="sha256-OUFW7hFO0/r5aEGTQOz9F/aXQOt+TwqI1Z4fbVvww04=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"
+    integrity="sha256-qE/6vdSYzQu9lgosKxhFplETvWvqAAlmAuR+yPh/0SI=" crossorigin="anonymous"></script>
+  <script src="/js/script.js"></script>
+</body>
+
+</html>

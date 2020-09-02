@@ -1,0 +1,17 @@
+{
+  "development": {
+      "config_id": "development",
+      "app_name": "Finance-Tracker",
+      "node_port": 4000,
+      "database_url": "mongodb://localhost:27017/finance?readPreference=primary&appname=MongoDB%20Compass&ssl=false"
+  },
+  "testing": {
+      "config_id": "testing",
+      "database_url": "mongodb://localhost:27017/finance?readPreference=primary&appname=MongoDB%20Compass&ssl=false"
+  },
+  "production": {
+      "config_id": "production",
+      "node_port": 8080,
+      "database_url": "mongodb+srv://kay:pass@finance.piutm.mongodb.net/<dbname>?retryWrites=true&w=majority"
+  }
+}
